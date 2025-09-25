@@ -1,5 +1,5 @@
 import Logo from "@/assets/icons/logo";
-import TravelRegister from "@/assets/images/travel-register.jpg";
+import parcelRegister from "@/assets/images/parcel-register.jpg";
 import { RegisterForm } from "@/components/modules/authentication/RegisterForm";
 import { Link } from "react-router";
 
@@ -8,7 +8,7 @@ export default function Register() {
         <div className="grid min-h-svh lg:grid-cols-2">
             <div className="relative hidden bg-muted lg:block">
                 <img
-                    src={TravelRegister}
+                    src={parcelRegister}
                     alt="Image"
                     className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.8]"
                 />

@@ -1,5 +1,5 @@
 import Logo from "@/assets/icons/logo";
-import TravelLogin from "@/assets/images/travel-login.jpg";
+import ParcelLogin from "@/assets/images/parcel-login.jpg";
 import { LoginForm } from "@/components/modules/authentication/LoginForm";
 import { Link } from "react-router";
 
@@ -20,7 +20,7 @@ export default function Login() {
             </div>
             <div className="relative hidden bg-muted lg:block">
                 <img
-                    src={TravelLogin}
+                    src={ParcelLogin}
                     alt="Image"
                     className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.8]"
                 />

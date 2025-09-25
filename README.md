@@ -1,70 +1,170 @@
-# React + TypeScript + Vite
+# 📦 Mama Parcel – Parcel Delivery Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, secure, and role-based frontend application for the **Mama Parcel** delivery system, built with **React**, **Redux Toolkit**, and **RTK Query**.  
+This app provides role-specific dashboards for **Senders**, **Receivers**, and **Admins**, enabling seamless parcel creation, tracking, and management with real-time updates.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo  
+🔗 **Frontend URL:** [https://mama-parcel-frontend.vercel.app](https://mama-parcel-frontend.vercel.app)  
+🔗 **Backend URL:** [https://mama-parcel-backend.vercel.app](https://mama-parcel-backend.vercel.app)  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🏠 Public Landing Section
+- **Home Page** with introduction to Mama Parcel  
+- **About Page** describing the service, mission, and team  
+- **Contact Page** with a simple inquiry form  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 🔐 Authentication & Authorization
+- JWT-based Login & Registration  
+- Role selection during registration (Sender / Receiver)  
+- Persistent authentication (remains logged in after refresh)  
+- Role-based redirection & access control  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 📦 Sender Dashboard
+- Create new parcel requests  
+- Cancel parcels (if not dispatched)  
+- View all created parcels with status history  
+
+### 📬 Receiver Dashboard
+- View incoming parcels  
+- Confirm delivery  
+- View delivery history  
+
+### 👨‍💼 Admin Dashboard
+- View and manage all users (block/unblock)  
+- View and manage all parcels (block/unblock, update status)  
+
+### 🔎 Parcel Tracking
+- Search parcels by tracking ID  
+- View full parcel status timeline with timestamps and notes  
+
+### 📊 Dashboard & Data Visualization
+- Overview cards (Total, Delivered, In Transit, Pending/Cancelled)  
+- Bar/Pie charts for delivery status distribution & trends  
+- Paginated, searchable, filterable parcel table with actions  
+
+### 🎨 General Features
+- Responsive, mobile-friendly UI  
+- Toast notifications for success/error states  
+- Global loading & error handling  
+- Role-based navigation menu  
+- Form validation with **Zod**  
+- Realistic demo data for a professional finish  
+
+---
+
+## 🛠 Tech Stack  
+
+**Frontend**  
+- React (TypeScript)  
+- Redux Toolkit & RTK Query (State & API)  
+- React Router DOM  
+- Tailwind CSS & ShadCN UI Components  
+- Zod (Validation)  
+- Sonner (Toast Notifications)  
+- Recharts (Charts & Visualization)  
+
+**Backend**  
+- Node.js & Express  
+- MongoDB & Mongoose  
+- JWT + bcrypt (Authentication & Security)  
+
+---
+
+## ⚙️ Installation & Setup  
+
+### 1️⃣ Clone the repository  
+```bash
+git clone https://github.com/yourusername/mama-parcel-frontend.git
+cd mama-parcel-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2️⃣ Install dependencies  
+```bash
+npm install
 ```
-# mama-parcel-client-b5a5
+
+### 3️⃣ Setup environment variables  
+Create a `.env` file in the root folder:  
+```env
+VITE_API_URL=https://mama-parcel-backend.vercel.app/api
+```
+
+### 4️⃣ Start development server  
+```bash
+npm run dev
+```
+
+---
+
+## 📸 Screenshots  
+
+### 🔐 Authentication Pages  
+- Login & Registration with role-based redirection  
+
+### 📦 Sender Dashboard  
+- Create parcels, cancel parcels, and view status logs  
+
+### 📬 Receiver Dashboard  
+- View incoming parcels & confirm deliveries  
+
+### 👨‍💼 Admin Dashboard  
+- Manage users, parcels, and delivery statuses  
+
+---
+
+## 🧪 Testing  
+
+1. Open **Postman** or the **frontend demo**  
+2. Test with the provided credentials  
+
+### Demo Credentials  
+
+| Role       | Email                  | Password      |
+|------------|------------------------|---------------|
+| Admin      | admin@mama.com          | 123456        |
+| Sender     | sender@mama.com         | 123456        |
+| Receiver   | receiver@mama.com       | 123456        |
+
+---
+
+## 📂 Project Structure  
+
+```
+src/
+├── components/       # Reusable UI Components
+├── pages/            # Landing, Dashboard, Auth Pages
+├── redux/            # Redux Toolkit & RTK Query Slices
+├── hooks/            # Custom Hooks
+├── utils/            # Helpers & Config
+├── types/            # TypeScript Types
+└── App.tsx           # Main App Entry
+```
+
+---
+
+## 🎥 Demo Video  
+
+A 5–10 min video walkthrough includes:  
+- Authentication & Role-based Dashboards  
+- Parcel creation, tracking, and management  
+- Admin features demonstration  
+- Deployment links & README overview  
+
+---
+
+## 🏆 Credits  
+
+Developed by **[Your Name]**  
+- Email: your@email.com  
+- GitHub: [yourusername](https://github.com/yourusername)  
+
+---
+
+## 📜 License  
+
+This project is licensed under the **MIT License** – feel free to use it for learning or production with credit.
