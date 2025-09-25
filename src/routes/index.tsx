@@ -18,6 +18,7 @@ import CreateParcel from "@/pages/Sender/CreateParcel";
 import ParcelStatusLogs from "@/pages/Sender/StatusLog";
 import EditProfile from "@/pages/EditProfile";
 import Contact from "@/pages/Contact";
+import NotFoundPage from "@/pages/NotFoundPage";
 
 export const router = createBrowserRouter([
     {
@@ -31,6 +32,7 @@ export const router = createBrowserRouter([
             { path: "track", Component: TrackParcel },
             { path: "parcel/:id", element: <ParcelStatusLogs /> },
         ],
+        errorElement: <NotFoundPage />
     },
     // Super Admin routes
     // {
@@ -49,6 +51,7 @@ export const router = createBrowserRouter([
             { index: true, element: <Navigate to="/admin/analytics" /> },
             ...generateRoutes(adminSidebarItems),
         ],
+        errorElement: <NotFoundPage />
     },
 
     // Sender routes
@@ -59,6 +62,7 @@ export const router = createBrowserRouter([
             { index: true, element: <Navigate to="/sender/parcels" /> },
             ...generateRoutes(senderSidebarItems),
         ],
+        errorElement: <NotFoundPage />
     },
 
     // Receiver routes
@@ -69,10 +73,11 @@ export const router = createBrowserRouter([
             { index: true, element: <Navigate to="/receiver/parcels" /> },
             ...generateRoutes(receiverSidebarItems),
         ],
+        errorElement: <NotFoundPage />
     },
 
-    { path: "/login", Component: Login },
-    { path: "/register", Component: Register },
-    { path: "/update-profile", Component: EditProfile },
-    { path: "/unauthorized", Component: Unauthorized },
+    { path: "/login", Component: Login, errorElement: <NotFoundPage /> },
+    { path: "/register", Component: Register, errorElement: <NotFoundPage /> },
+    { path: "/update-profile", Component: EditProfile, errorElement: <NotFoundPage /> },
+    { path: "/unauthorized", Component: Unauthorized, errorElement: <NotFoundPage /> },
 ]);
