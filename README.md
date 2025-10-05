@@ -6,7 +6,7 @@ This app provides role-specific dashboards for **Senders**, **Receivers**, and *
 ---
 
 ## 🚀 Live Demo
-🔗 **Frontend URL:** [https://mama-parcel-frontend.vercel.app](https://mama-parcel-frontend.vercel.app)
+🔗 **Frontend URL:** [https://mamaparcel.vercel.app](https://mama-parcel-frontend.vercel.app)
 🔗 **Backend URL:** [https://mama-parcel-backend.vercel.app](https://mama-parcel-backend.vercel.app)
 
 ---
