@@ -147,16 +147,6 @@ src/
 
 ---
 
-## 🎥 Demo Video
-
-A 5–10 min video walkthrough includes:
-- Authentication & Role-based Dashboards
-- Parcel creation, tracking, and management
-- Admin features demonstration
-- Deployment links & README overview
-
----
-
 ## 🏆 Credits
 
 Developed by **[Your Name]**
