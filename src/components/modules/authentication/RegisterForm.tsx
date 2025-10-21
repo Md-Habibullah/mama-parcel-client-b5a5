@@ -67,11 +67,18 @@ export function RegisterForm({ className, ...props }: React.HTMLAttributes<HTMLD
     });
 
     const onSubmit = async (data: z.infer<typeof registerSchema>) => {
+        // const userInfo = {
+        //     name: data.name,
+        //     email: data.email,
+        //     password: data.password,
+        //     role: data.role,
+        // };
+
         const userInfo = {
-            name: data.name,
-            email: data.email,
-            password: data.password,
-            role: data.role,
+            name: data.name.trim(),
+            email: data.email.trim(),
+            password: data.password.trim(),
+            role: data.role.trim(),
         };
 
         try {

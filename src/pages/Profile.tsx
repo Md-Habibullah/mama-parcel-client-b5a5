@@ -16,9 +16,12 @@ import {
     Mail,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator"
+import { baseApi } from "@/redux/baseApi";
+import { useAppDispatch } from "@/redux/hooks";
 
 export default function Profile() {
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
     const { data, isLoading, error } = useUserInfoQuery(undefined);
 
     if (isLoading) return <ProfileSkeleton />;
@@ -36,6 +39,7 @@ export default function Profile() {
 
     const handleLogout = () => {
         localStorage.removeItem("token");
+        dispatch(baseApi.util.resetApiState());
         navigate("/login");
     };
 

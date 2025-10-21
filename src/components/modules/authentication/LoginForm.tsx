@@ -34,7 +34,12 @@ export function LoginForm({
 
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
         try {
-            const res = await login(data).unwrap();
+            const payload = {
+                email: data.email.trim(),
+                password: data.password.trim(),
+            };
+
+            const res = await login(payload).unwrap();
             if (res.success) {
                 toast.success("Logged in successfully");
                 navigate("/");
